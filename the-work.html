@@ -14,145 +14,76 @@
   section h2 { color: #f5c518; font-size: 1.6em; border-bottom: 1px solid #333; padding-bottom: 12px; margin-bottom: 30px; letter-spacing: 1px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
   .card { background: #111; border: 1px solid #222; border-radius: 6px; overflow: hidden; }
-  .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+  .card img { width: 100%; height: 220px; object-fit: cover; display: block; cursor: pointer; transition: opacity 0.2s; }
+  .card img:hover { opacity: 0.85; }
   .card-body { padding: 14px; }
   .card-body h3 { margin: 0 0 6px; font-size: 1em; color: #f5c518; }
   .card-body p { margin: 0; font-size: 0.85em; color: #aaa; line-height: 1.6; }
   .placeholder { width: 100%; height: 220px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.85em; }
   footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.8em; border-top: 1px solid #1a1a1a; margin-top: 60px; }
+  #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.93); z-index: 1000; justify-content: center; align-items: center; flex-direction: column; padding: 20px; box-sizing: border-box; }
+  #lightbox.active { display: flex; }
+  #lightbox img { max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 60px rgba(0,0,0,0.8); }
+  #lightbox-caption { color: #f5c518; margin-top: 16px; font-size: 1em; text-align: center; }
+  #lightbox-close { position: fixed; top: 20px; right: 30px; color: #fff; font-size: 2.5em; cursor: pointer; line-height: 1; }
+  #lightbox-close:hover { color: #f5c518; }
 </style>
 </head>
 <body>
-
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
 <header>
   <h1>The Work</h1>
   <p>Jimmy Joe Jenkins &mdash; Five Decades of Art</p>
   <br>
   <a href="index.html">&larr; Back to MuralEye</a>
 </header>
-
 <section>
   <h2>Murals with MuralEye</h2>
   <div class="grid">
-
-    <div class="card">
-      <img src="images/muraleye-murals/DevineDriftButterflies.JPG" alt="Divine Drift">
-      <div class="card-body">
-        <h3>Divine Drift</h3>
-        <p>A solitary figure floats weightlessly through an endless current, surrounded by Monarch butterflies as symbols of transformation and spiritual guidance. Gold accents illuminate beauty that could not exist without change.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/DevineDriftPerspectiveButterflies.JPG" alt="Divine Drift Perspective">
-      <div class="card-body">
-        <h3>Divine Drift — In Perspective</h3>
-        <p>The full corridor view of Divine Drift, showing the immersive scale of the installation. Painted using MuralEye to maintain perfect proportion across the entire wall.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/KellerSportsParkFootball.JPG" alt="Keller Sports Park Football">
-      <div class="card-body">
-        <h3>Friday Night Legacy — Keller Sports Park</h3>
-        <p>Football has long been woven into the identity of Keller. This mural captures determination and intensity while the iconic Keller "K" stands as a symbol of community pride.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/KellerSportsParkRodeo.JPG" alt="Keller Sports Park Rodeo">
-      <div class="card-body">
-        <h3>Western Spirit — Keller Sports Park</h3>
-        <p>A tribute to Keller's ranching roots and the independent spirit of the American West. The rodeo queen symbolizes confidence, tradition, and community celebration.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/KellerSportsParkSoccer.JPG" alt="Keller Sports Park Soccer">
-      <div class="card-body">
-        <h3>Forward Together — Keller Sports Park</h3>
-        <p>Soccer is a game of movement, vision, and teamwork. This mural captures the focus and determination that defines every great athlete — and the community that surrounds them.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/KellerSportsParkSoftball.JPG" alt="Keller Sports Park Softball">
-      <div class="card-body">
-        <h3>Every Great Season Begins Here — Keller Sports Park</h3>
-        <p>Inspired by vintage Americana, this mural honors the countless young athletes who dream big every time they step into the batter's box.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/5IronGolfCow.JPG" alt="Five Iron Golf Longhorn">
-      <div class="card-body">
-        <h3>Texas Royalty — Five Iron Golf</h3>
-        <p>A Longhorn rests upon a vintage sofa — ranch icon reimagined as an unexpected portrait of quiet confidence. Vivid color symbolizes the evolving identity of modern Texas.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/5IronGolfCity.JPG" alt="Five Iron Golf City">
-      <div class="card-body">
-        <h3>The 19th Hole — Five Iron Golf</h3>
-        <p>Downtown Fort Worth reimagined through bold contemporary color. The city skyline, classic automobiles, western heritage, and modern culture collide into a single vivid celebration.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/muraleye-murals/RustedCorrugatedTin.JPG" alt="Rocker B Ranch">
-      <div class="card-body">
-        <h3>Rocker B Ranch — Corrugated Tin</h3>
-        <p>One of the most challenging surfaces in mural work — no straight lines, no flat plane. Ten murals painted on rusted corrugated tin in perfect proportion. The field test that proved MuralEye, May 2026.</p>
-      </div>
-    </div>
-
+    <div class="card"><img src="images/muraleye-murals/DevineDriftButterflies.JPG" alt="Divine Drift" onclick="openLightbox(this, 'Divine Drift')"><div class="card-body"><h3>Divine Drift</h3><p>A solitary figure floats weightlessly through an endless current, surrounded by Monarch butterflies as symbols of transformation and spiritual guidance. Gold accents illuminate beauty that could not exist without change.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/DevineDriftPerspectiveButterflies.JPG" alt="Divine Drift Perspective" onclick="openLightbox(this, 'Divine Drift — In Perspective')"><div class="card-body"><h3>Divine Drift — In Perspective</h3><p>The full corridor view of Divine Drift, showing the immersive scale of the installation. Painted using MuralEye to maintain perfect proportion across the entire wall.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/KellerSportsParkFootball.JPG" alt="Keller Football" onclick="openLightbox(this, 'Friday Night Legacy — Keller Sports Park')"><div class="card-body"><h3>Friday Night Legacy — Keller Sports Park</h3><p>Football has long been woven into the identity of Keller. This mural captures determination and intensity while the iconic Keller K stands as a symbol of community pride.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/KellerSportsParkRodeo.JPG" alt="Keller Rodeo" onclick="openLightbox(this, 'Western Spirit — Keller Sports Park')"><div class="card-body"><h3>Western Spirit — Keller Sports Park</h3><p>A tribute to Keller's ranching roots and the independent spirit of the American West. The rodeo queen symbolizes confidence, tradition, and community celebration.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/KellerSportsParkSoccer.JPG" alt="Keller Soccer" onclick="openLightbox(this, 'Forward Together — Keller Sports Park')"><div class="card-body"><h3>Forward Together — Keller Sports Park</h3><p>Soccer is a game of movement, vision, and teamwork. This mural captures the focus and determination that defines every great athlete — and the community that surrounds them.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/KellerSportsParkSoftball.JPG" alt="Keller Softball" onclick="openLightbox(this, 'Every Great Season Begins Here — Keller Sports Park')"><div class="card-body"><h3>Every Great Season Begins Here — Keller Sports Park</h3><p>Inspired by vintage Americana, this mural honors the countless young athletes who dream big every time they step into the batter's box.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/5IronGolfCow.JPG" alt="Texas Royalty" onclick="openLightbox(this, 'Texas Royalty — Five Iron Golf')"><div class="card-body"><h3>Texas Royalty — Five Iron Golf</h3><p>A Longhorn rests upon a vintage sofa — ranch icon reimagined as an unexpected portrait of quiet confidence. Vivid color symbolizes the evolving identity of modern Texas.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/5IronGolfCity.JPG" alt="The 19th Hole" onclick="openLightbox(this, 'The 19th Hole — Five Iron Golf')"><div class="card-body"><h3>The 19th Hole — Five Iron Golf</h3><p>Downtown Fort Worth reimagined through bold contemporary color. The city skyline, classic automobiles, western heritage, and modern culture collide into a single vivid celebration.</p></div></div>
+    <div class="card"><img src="images/muraleye-murals/RustedCorrugatedTin.JPG" alt="Rocker B Ranch" onclick="openLightbox(this, 'Rocker B Ranch — Corrugated Tin')"><div class="card-body"><h3>Rocker B Ranch — Corrugated Tin</h3><p>One of the most challenging surfaces in mural work — no straight lines, no flat plane. Ten murals painted on rusted corrugated tin in perfect proportion. The field test that proved MuralEye, May 2026.</p></div></div>
   </div>
 </section>
-
 <section>
   <h2>Murals</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="placeholder">Coming Soon</div>
-      <div class="card-body"><h3>More Work</h3><p>Five decades of murals — coming soon.</p></div>
-    </div>
-  </div>
+  <div class="grid"><div class="card"><div class="placeholder">Coming Soon</div><div class="card-body"><h3>More Work</h3><p>Five decades of murals — coming soon.</p></div></div></div>
 </section>
-
 <section>
   <h2>Paintings</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="placeholder">Coming Soon</div>
-      <div class="card-body"><h3>More Work</h3><p>Studio paintings — coming soon.</p></div>
-    </div>
-  </div>
+  <div class="grid"><div class="card"><div class="placeholder">Coming Soon</div><div class="card-body"><h3>More Work</h3><p>Studio paintings — coming soon.</p></div></div></div>
 </section>
-
 <section>
   <h2>Sculpture</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="placeholder">Coming Soon</div>
-      <div class="card-body"><h3>More Work</h3><p>Public sculpture — coming soon.</p></div>
-    </div>
-  </div>
+  <div class="grid"><div class="card"><div class="placeholder">Coming Soon</div><div class="card-body"><h3>More Work</h3><p>Public sculpture — coming soon.</p></div></div></div>
 </section>
-
 <section>
   <h2>Press &amp; Articles</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="placeholder">Coming Soon</div>
-      <div class="card-body"><h3>More Work</h3><p>Features and write-ups — coming soon.</p></div>
-    </div>
-  </div>
+  <div class="grid"><div class="card"><div class="placeholder">Coming Soon</div><div class="card-body"><h3>More Work</h3><p>Features and write-ups — coming soon.</p></div></div></div>
 </section>
-
-<footer>
-  MuralEye&reg; &mdash; Patent Pending USPTO #64/097,844 &middot; Trademark Serial #99855194
-</footer>
-
+<footer>MuralEye&reg; &mdash; Patent Pending USPTO #64/097,844 &middot; Trademark Serial #99855194</footer>
+<script>
+  function openLightbox(img, caption) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox-caption").textContent = caption;
+    document.getElementById("lightbox").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    document.getElementById("lightbox").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeLightbox(); });
+</script>
 </body>
 </html>
