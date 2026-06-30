@@ -23,6 +23,13 @@
   .card-body h3 { margin: 0 0 6px; font-size: 1em; color: #f5c518; }
   .card-body p { margin: 0; font-size: 0.85em; color: #aaa; line-height: 1.6; }
   .placeholder { width: 100%; height: 220px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.85em; }
+
+  .press-list { display: flex; flex-direction: column; gap: 16px; }
+  .press-item { display: block; background: #111; border: 1px solid #222; border-radius: 6px; padding: 20px; text-decoration: none; transition: border-color 0.2s; }
+  .press-item:hover { border-color: #f5c518; }
+  .press-item h3 { color: #f5c518; margin: 0 0 4px; font-size: 1.1em; }
+  .press-source { color: #888; font-size: 0.8em; margin: 0 0 10px; font-style: italic; }
+  .press-item p:last-child { color: #ccc; font-size: 0.9em; line-height: 1.6; margin: 0; }
   footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.8em; border-top: 1px solid #1a1a1a; margin-top: 60px; }
   #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.93); z-index: 1000; justify-content: center; align-items: center; flex-direction: column; padding: 20px; box-sizing: border-box; }
   #lightbox.active { display: flex; }
@@ -103,7 +110,45 @@
 </section>
 <section>
   <h2>Press &amp; Articles</h2>
-  <div class="grid"><div class="card"><div class="placeholder">Coming Soon</div><div class="card-body"><h3>More Work</h3><p>Features and write-ups — coming soon.</p></div></div></div>
+  <div class="press-list">
+
+    <a href="https://voyagedallas.com/interview/meet-jimmy-jenkins-of-fort-worth-river-district/" target="_blank" class="press-item">
+      <h3>Voyage Dallas — Meet Jimmy Jenkins of Fort Worth River District</h3>
+      <p class="press-source">Voyage Dallas, 2025</p>
+      <p>An in-depth interview covering five decades in art, public projects, the healing and community focus behind the work, and a look toward the future.</p>
+    </a>
+
+    <a href="https://www.fwweekly.com/2018/03/07/miracle-murals/" target="_blank" class="press-item">
+      <h3>Miracle Murals</h3>
+      <p class="press-source">Fort Worth Weekly, 2018</p>
+      <p>A detailed feature on the journey from personal hardship to a career in public art — including early murals "Monkey Lisa" and "Independence Day," and the founding of Everybody's Place.</p>
+    </a>
+
+    <a href="https://trinitytrailsfw.com/2021/01/25/painting-the-river-jimmy-jenkins/" target="_blank" class="press-item">
+      <h3>Painting the River</h3>
+      <p class="press-source">Trinity Trails Fort Worth, 2021</p>
+      <p>A profile on the "Cloud 9" heron mural along the Trinity Trails, with reflections on dyslexia, education, and a philosophy of nature and tranquility in art.</p>
+    </a>
+
+    <a href="https://www.papercitymag.com/arts/house-neville-fort-worth-art-space-takes-root-camp-bowie/" target="_blank" class="press-item">
+      <h3>House of NeVille — Fort Worth Art Space Takes Root</h3>
+      <p class="press-source">PaperCity Magazine, 2023</p>
+      <p>On co-founding House of NeVille Gallery & Gatherings with Joy Harvison and Bradley Kent, born out of art therapy and community space.</p>
+    </a>
+
+    <a href="https://shedrawsonwalls.com/public-art/" target="_blank" class="press-item">
+      <h3>She Draws on Walls — Public Art Collaboration</h3>
+      <p class="press-source">She Draws on Walls (with Amy Brines)</p>
+      <p>Highlights murals including Best Maid Pickles, the Giant Butterfly on Pearl Snap Kolaches, Three Monkeys, and Fort Worth Zoo facades.</p>
+    </a>
+
+    <a href="https://www.fortworth.com/things-to-do/attractions/murals/river-district/" target="_blank" class="press-item">
+      <h3>River District Murals</h3>
+      <p class="press-source">Visit Fort Worth</p>
+      <p>Official city listing of public murals including "Monkey Lisa" and "Making Change" throughout the River District.</p>
+    </a>
+
+  </div>
 </section>
 <footer>MuralEye&reg; &mdash; Patent Pending USPTO #64/097,844 &middot; Trademark Serial #99855194</footer>
 <script>
